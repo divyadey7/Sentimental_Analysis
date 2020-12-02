@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Machine Learning App with Flask
+		</div>
+		<h2>Sentiment Analysis</h2>
+
+  </div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="/sentiment_analysis_prediction" method="POST">
+		<p>Enter Your Message Here</p>
+		<input type="text" name="text" class="form-control"	placeholder='Text'/>
+
+		<br/><br>
+
+		<input type="submit" class="btn-info" value="Predict">
+		</form>
+		<div class="col-md-3">
+			<div class="alert alert-primary" role="alert">
+				<h1>Sentiment</h1>
+				{% if sentiment %}
+					{{ sentiment }}
+						{% endif %}
+			</div>
+		</div>
+		<div class="col-sm-6">
+			{% if sentiment %}
+			<div class="col-sm-2"><h1>Emotion</h1>
+				<img src="{{ image }}" alt="Image" width="100" height="100">
+			</div>
+			{% endif %}
+		</div>
+
+
+	</div>
+
+</body>
+</html>
